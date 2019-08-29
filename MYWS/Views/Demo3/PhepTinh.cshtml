@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Phép tính</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Phép tính Tổng</h2>
+        <form method="post">
+            <div>
+                <label for="txtSoA">Số A:</label>
+                <input type="text" name="SoA" id="txtSoA" />
+            </div><br />
+            <div>
+                <label for="txtSoB">Số B:</label>
+                <input type="text" name="SoB" id="txtSoB" />
+            </div><br />
+            <button type="submit">Tính</button><br />
+            <h4>@ViewBag.Tong</h4>
+        </form>
+    </div>
+</body>
+</html>
