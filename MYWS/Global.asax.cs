@@ -16,6 +16,9 @@ namespace MYWS
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            // Bổ sung dịch thông báo mặc định là tiếng anh cho textbox
+            ClientDataTypeModelValidatorProvider.ResourceClassKey = "Messages";
+            DefaultModelBinder.ResourceClassKey = "Messages";
         }
     }
 }

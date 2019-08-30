@@ -1,0 +1,55 @@
+﻿@model MYWS.Models.PhepTinhModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<!--Html @*
+    https://getbootstrap.com/docs/4.0/components/forms/ 
+ *@-->
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Phép tính Demo5</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-warning">Phép tính Demo5</h2>
+        <!-- @*Thay thế <form> method="post" *@-->
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            <div class="form-group row">
+                @Html.LabelFor(m => m.SoA, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(m => m.SoA, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.SoA, null, htmlAttributes: new { @class = "text-danger" })
+                </div>
+            </div><br />
+            <div class="form-group row">
+                @* Ctrl + J: thay đổi biến số*@
+                @Html.LabelFor(m => m.SoB, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(m => m.SoB, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.SoB, null, htmlAttributes: new { @class = "text-danger" })
+                </div>
+            </div><br />
+            <div class="form-group row">
+                <div class="offset-sm-2 col-sm-10">
+                    <button class="btn btn-info" type="submit" formaction="@Url.Action("TinhTong")">Tổng</button>
+                    <button class="btn btn-warning" type="submit" formaction="@Url.Action("TinhTich")">Tích</button><br />
+                </div>
+                <h4 class="text-success">@ViewBag.KetQua</h4>
+            </div>
+
+        }
+    </div>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

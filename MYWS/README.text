@@ -1,0 +1,4 @@
+﻿// Dịch thông báo lỗi mặc định tiếng anh
+(App_GlobalResources):
+------- Project->Add ASP.NET folder ->App_GlobalResources
+	+ (Messages.resx): 	App_GlobalResources-->Add-->Resources file
